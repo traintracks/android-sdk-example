@@ -1,5 +1,8 @@
 package fr.tvbarthel.games.chasewhisply.mechanics.behaviors;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.List;
 
 import fr.tvbarthel.games.chasewhisply.mechanics.informations.GameInformation;
@@ -8,6 +11,7 @@ import fr.tvbarthel.games.chasewhisply.model.DisplayableItem;
 import fr.tvbarthel.games.chasewhisply.model.DisplayableItemFactory;
 import fr.tvbarthel.games.chasewhisply.model.TargetableItem;
 import fr.tvbarthel.games.chasewhisply.sound.GameSoundManager;
+import traintracks.android_sdk.Traintracks;
 
 
 public abstract class GameBehaviorStandard implements GameBehavior {
@@ -97,6 +101,7 @@ public abstract class GameBehaviorStandard implements GameBehavior {
             fireABullet();
             if (currentTarget == null) {
                 //miss
+                Traintracks.getInstance().logEvent("Miss");
                 fireResult = FIRE_RESULT_MISS;
                 missTarget();
             } else {
@@ -108,6 +113,22 @@ public abstract class GameBehaviorStandard implements GameBehavior {
                     fireResult = FIRE_RESULT_KILL;
                     killTarget(currentTarget);
                 }
+                JSONObject eventProperties = new JSONObject();
+                JSONObject target = new JSONObject();
+                try {
+                    target.put("type", currentTarget.getType());
+                    target.put("x", currentTarget.getX());
+                    target.put("y", currentTarget.getY());
+                    target.put("health", currentTarget.getHealth());
+                    target.put("exp", currentTarget.getExpPoint());
+                    target.put("base", currentTarget.getBasePoint());
+                    target.put("alive", currentTarget.isAlive());
+                    target.put("id", currentTarget.toString());
+
+                    eventProperties.put("target", target);
+                } catch (JSONException exception) {
+                }
+                Traintracks.getInstance().logEvent("Hit", eventProperties);
             }
         } else {
             shotWithoutAmmo();
