@@ -14,8 +14,8 @@ dependencies {
     compile 'com.android.support:cardview-v7:23.1.1'
     compile 'com.nineoldandroids:library:2.4.0'
     compile project(':BaseGameUtils')
-    compile project(':traintracks-android-sdk-1.0-debug')
     compile 'com.squareup.okhttp:okhttp:2.6.0'
+    compile project(':traintracks-android-sdk-1.0')
 }
 
 android {
