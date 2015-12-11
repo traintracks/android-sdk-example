@@ -63,6 +63,13 @@ Other Session Options:
     Traintracks.getInstance().logEvent("EVENT", null, true);
     ```
 
+# Setting Custom User Name
+
+```java
+Amplitude.getInstance().setUserName("USER_NAME_HERE");
+```
+
+
 # Setting Event Properties #
 
 You can attach additional data to any event by passing a JSONObject as the second argument to `logEvent()`:
