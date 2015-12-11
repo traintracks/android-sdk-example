@@ -10,7 +10,7 @@
 5. In the `onCreate()` of your main activity, initialize the SDK:
 
     ```java
-    Traintracks.getInstance().initialize(this, "YOUR_API_KEY_HERE", "YOUR_API_SECRET_HERE").enableForegroundTracking(getApplication());
+    Traintracks.getInstance().initialize(this, "YOUR_API_ENDPOINT_HERE", "YOUR_API_KEY_HERE", "YOUR_API_SECRET_HERE").enableForegroundTracking(getApplication());
     ```
 
 6. To track an event anywhere in the app, call:
@@ -71,7 +71,7 @@ A user's data will be merged on the backend so that any events up to that point 
 You can also add a user ID as an argument to the `initialize()` call:
 
 ```
-Traintracks.getInstance().initialize(this, "YOUR_API_KEY_HERE", "YOUR_API_SECRET_HERE", "USER_ID_HERE");
+Traintracks.getInstance().initialize(this, "YOUR_API_ENDPOINT_HERE", "YOUR_API_KEY_HERE", "YOUR_API_SECRET_HERE", "USER_ID_HERE");
 ```
 
 # Setting Event Properties #
