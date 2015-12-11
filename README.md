@@ -17,7 +17,7 @@ The SDK is located at: `traintracks-android-sdk-1.0/traintracks-android-sdk-1.0.
 5. In the `onCreate()` of your main activity, initialize the SDK:
 
     ```java
-    Traintracks.getInstance().initialize(this, "YOUR_API_ENDPOINT_HERE", "YOUR_API_KEY_HERE", "YOUR_API_SECRET_HERE").enableForegroundTracking(getApplication());
+    Traintracks.getInstance().initialize(this, "YOUR_API_ENDPOINT_HERE", "YOUR_API_KEY_HERE", "YOUR_API_SECRET_HERE", "USER_ID_HERE").enableForegroundTracking(getApplication());
     ```
 
 6. To track an event anywhere in the app, call:
@@ -62,24 +62,6 @@ Other Session Options:
     ```java
     Traintracks.getInstance().logEvent("EVENT", null, true);
     ```
-
-# Setting Custom User IDs #
-
-If your app has its own login system that you want to track users with, you can call `setUserId()` at any time:
-
-```java
-Traintracks.getInstance().setUserId("USER_ID_HERE");
-```
-
-You can also clear the user ID by calling `setUserId` with input `null`. Events without a user ID are anonymous.
-
-A user's data will be merged on the backend so that any events up to that point on the same device will be tracked under the same user.
-
-You can also add a user ID as an argument to the `initialize()` call:
-
-```
-Traintracks.getInstance().initialize(this, "YOUR_API_ENDPOINT_HERE", "YOUR_API_KEY_HERE", "YOUR_API_SECRET_HERE", "USER_ID_HERE");
-```
 
 # Setting Event Properties #
 
