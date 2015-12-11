@@ -1,12 +1,12 @@
-# traintracks-android-sdk
-
+# android-sdk-example
 
 This is an example project on how to use the Android SDK.
 
-The application is based on [https://github.com/tvbarthel/ChaseWhisplyProject] and records events as one uses the application and sends them to Traintracks.
+The application is based on https://github.com/tvbarthel/ChaseWhisplyProject and records events as one uses the application and sends them to Traintracks.
 
 The SDK is located at: `traintracks-android-sdk-1.0/traintracks-android-sdk-1.0.aar`
 
+# How to use the SDK #
 
 4.  In every file that uses analytics, import traintracks.android_sdk.Traintracks at the top:
 
