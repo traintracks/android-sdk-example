@@ -54,7 +54,7 @@ public class HomeActivity extends BaseGameActivity implements GameHomeFragment.L
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        Traintracks.getInstance().initialize(this, "f9a7600b-9677-483b-9697-4a68f759cb21", "d9419951-2f8b-4bf6-9ab0-6f0075afad03", "ChaseWhisplyTed");
+        Traintracks.getInstance().initialize(this, "https://api.traintracks.io/v1/events", "f9a7600b-9677-483b-9697-4a68f759cb21", "d9419951-2f8b-4bf6-9ab0-6f0075afad03", "ChaseWhisplyTed");
         Traintracks.getInstance().logEvent("GAME_LAUNCHED");
         setContentView(R.layout.activity_game_home);
         if (savedInstanceState == null) {
