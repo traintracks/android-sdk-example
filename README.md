@@ -66,7 +66,7 @@ Other Session Options:
 # Setting Custom User Name
 
 ```java
-Amplitude.getInstance().setUserName("USER_NAME_HERE");
+Traintracks.getInstance().setUserName("USER_NAME_HERE");
 ```
 
 
